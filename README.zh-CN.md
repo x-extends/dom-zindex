@@ -24,6 +24,12 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 npm install dom-zindex
 ```
 
+### CDN
+
+```HTML
+<script src="https://unpkg.com/dom-zindex"></script>
+```
+
 ## Example
 
 ```javascript
@@ -40,12 +46,6 @@ domZindex.getSubCurrent() // 2001
 
 // 获取次要的下一级 z-index
 domZindex.getSubNext() // 2002
-```
-
-### CDN
-
-```HTML
-<script src="https://unpkg.com/dom-zindex"></script>
 ```
 
 ## License
