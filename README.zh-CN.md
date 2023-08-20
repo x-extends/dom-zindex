@@ -1,6 +1,6 @@
-# dom-zindex
+# z-index 管理器
 
-简体中文 | [繁體中文](README.zh-TW.md) | [English](README.en.md)  
+[English](README.en.md) | 简体中文  
 
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
 [![npm downloads](https://img.shields.io/npm/dt/dom-zindex.svg?style=flat-square)](https://npm-stat.com/charts.html?package=dom-zindex)
