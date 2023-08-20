@@ -3,7 +3,6 @@
 English | [简体中文](README.zh-CN.md)  
 
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
-[![npm build](https://travis-ci.com/x-extends/dom-zindex.svg?branch=master)](https://travis-ci.com/x-extends/dom-zindex)
 [![npm downloads](https://img.shields.io/npm/dt/dom-zindex.svg?style=flat-square)](https://npm-stat.com/charts.html?package=dom-zindex)
 [![issues](https://img.shields.io/github/issues/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues)
 [![issues closed](https://img.shields.io/github/issues-closed/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues?q=is%3Aissue+is%3Aclosed)
@@ -25,10 +24,25 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 npm install dom-zindex
 ```
 
-### CDN
+## Example
 
-It is not recommended to use the public CDN address for production, because the connection may fail at any time, causing the project to hang up;  
-Remember to lock the version number by using CDN to avoid being affected by incompatible updates.
+```javascript
+import domZindex from 'dom-zindex'
+
+// Get main current z-index
+domZindex.getCurrent() // 1000
+
+// Get main next z-index
+domZindex.getNext() // 1001
+
+// Get subordinate current z-index, the secondary z-index will always be greater than the primary z-index.
+domZindex.getSubCurrent() // 2001
+
+// Get subordinate next z-index
+domZindex.getSubNext() // 2002
+```
+
+## CDN
 
 ```HTML
 <script src="https://unpkg.com/dom-zindex"></script>

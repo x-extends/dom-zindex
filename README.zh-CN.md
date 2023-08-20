@@ -3,7 +3,6 @@
 简体中文 | [繁體中文](README.zh-TW.md) | [English](README.en.md)  
 
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
-[![npm build](https://travis-ci.com/x-extends/dom-zindex.svg?branch=master)](https://travis-ci.com/x-extends/dom-zindex)
 [![npm downloads](https://img.shields.io/npm/dt/dom-zindex.svg?style=flat-square)](https://npm-stat.com/charts.html?package=dom-zindex)
 [![issues](https://img.shields.io/github/issues/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues)
 [![issues closed](https://img.shields.io/github/issues-closed/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues?q=is%3Aissue+is%3Aclosed)
@@ -25,10 +24,25 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 npm install dom-zindex
 ```
 
-### CDN
+## Example
 
-不建议将第三方的 CDN 地址用于生产，因为该连接随时都可能会失效，导致项目挂掉;  
-使用 CDN 方式记得锁定版本号，避免受到非兼容性更新的影响
+```javascript
+import domZindex from 'dom-zindex'
+
+// 获取当前 z-index
+domZindex.getCurrent() // 1000
+
+// 获取下一级 z-index
+domZindex.getNext() // 1001
+
+// 获取次要的当前 z-index，次要的 z-index 始终会大于主要的 z-index
+domZindex.getSubCurrent() // 2001
+
+// 获取次要的下一级 z-index
+domZindex.getSubNext() // 2002
+```
+
+### CDN
 
 ```HTML
 <script src="https://unpkg.com/dom-zindex"></script>
