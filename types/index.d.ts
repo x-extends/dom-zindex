@@ -30,7 +30,7 @@ export function getSubCurrent(): number
  */
 export function getSubNext(): number
 
-const DomZIndex: {
+declare const DomZIndex: {
   setCurrent: typeof setCurrent
   getCurrent: typeof getCurrent
   getNext: typeof getNext
