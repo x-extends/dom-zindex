@@ -15,6 +15,7 @@ function getDom () {
       if (!storeEl) {
         storeEl = document.createElement('div')
         storeEl.id = storeId
+        storeEl.style.display = 'none'
         document.body.appendChild(storeEl)
         setCurrent(storeData.m)
         setSubCurrent(storeData.s)
