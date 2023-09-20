@@ -30,10 +30,13 @@ npm install dom-zindex
 <script src="https://unpkg.com/dom-zindex"></script>
 ```
 
-## Example
+## Example 1
 
 ```javascript
 import domZindex from 'dom-zindex'
+
+// Set main current z-index
+domZindex.setCurrent(1000)
 
 // Get main current z-index
 domZindex.getCurrent() // 1000
@@ -46,6 +49,20 @@ domZindex.getSubCurrent() // 2001
 
 // Get subordinate next z-index
 domZindex.getSubNext() // 2002
+```
+
+## Example 2
+
+```javascript
+import domZindex from 'dom-zindex'
+
+// If the incoming z-index is less than global, the next one is automatically fetched.
+let currZindex1 = 888
+currZindex1 = domZindex.getCurrent(currZindex1) // 1000
+
+// If the z-index is greater than the global value, the value is returned.
+let currZindex2 = 2000
+currZindex2 = domZindex.getCurrent(currZindex2) // 1500
 ```
 
 ## License

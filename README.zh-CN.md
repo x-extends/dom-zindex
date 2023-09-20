@@ -30,10 +30,13 @@ npm install dom-zindex
 <script src="https://unpkg.com/dom-zindex"></script>
 ```
 
-## Example
+## 示例 1
 
 ```javascript
 import domZindex from 'dom-zindex'
+
+// 设置当前 z-index
+domZindex.setCurrent(1000)
 
 // 获取当前 z-index
 domZindex.getCurrent() // 1000
@@ -46,6 +49,20 @@ domZindex.getSubCurrent() // 2001
 
 // 获取次要的下一级 z-index
 domZindex.getSubNext() // 2002
+```
+
+## 示例 2
+
+```javascript
+import domZindex from 'dom-zindex'
+
+// 如果传入 z-index 小于全局，则自动获取下一个
+let currZindex1 = 999
+currZindex1 = domZindex.getCurrent(currZindex1) // 1000
+
+// 如果传入 z-index 大于全局，则返回传入值
+let currZindex2 = 1500
+currZindex2 = domZindex.getCurrent(currZindex2) // 1500
 ```
 
 ## License

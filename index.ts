@@ -45,21 +45,30 @@ function createSetHandle (key: keyof (typeof storeData)) {
 
 export const setCurrent = createSetHandle(storeMainKey)
 
-function createGetHandle (key: keyof (typeof storeData)) {
-  return function getCurrent () {
+function createGetHandle (key: keyof (typeof storeData), nextMethod: () => number) {
+  return function getCurrent (currZindex?: number) {
     let zIndex
     let doc = getDom()
     if (doc) {
-      zIndex = doc.dataset ? doc.dataset[key] : doc.getAttribute('data-' + key)
+      const domVal = doc.dataset ? doc.dataset[key] : doc.getAttribute('data-' + key)
+      if (domVal) {
+        zIndex = Number(domVal)
+      }
     }
-    if (zIndex) {
-      return Number(zIndex)
+    if (!zIndex) {
+      zIndex = storeData[key]
     }
-    return storeData[key]
+    if (currZindex) {
+      if (Number(currZindex) < zIndex) {
+        return nextMethod()
+      }
+      return currZindex
+    }
+    return zIndex
   }
 }
 
-export const getCurrent = createGetHandle(storeMainKey)
+export const getCurrent = createGetHandle(storeMainKey, getNext)
 
 export function getNext () {
   return setCurrent(getCurrent() + 1)
@@ -67,7 +76,7 @@ export function getNext () {
 
 export const setSubCurrent = createSetHandle(storeSubKey)
 
-const _getSubCurrent = createGetHandle(storeSubKey)
+const _getSubCurrent = createGetHandle(storeSubKey, getSubNext)
 
 export function getSubCurrent () {
   return getCurrent() + _getSubCurrent()
