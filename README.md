@@ -35,19 +35,22 @@ npm install dom-zindex
 ```javascript
 import domZindex from 'dom-zindex'
 
-// Set main current z-index
+// Gets the largest z-index on the page.
+domZindex.getMax()
+
+// Set main current z-index.
 domZindex.setCurrent(1000)
 
-// Get main current z-index
+// Get main current z-index.
 domZindex.getCurrent() // 1000
 
-// Get main next z-index
+// Get main next z-index.
 domZindex.getNext() // 1001
 
 // Get subordinate current z-index, the secondary z-index will always be greater than the primary z-index.
 domZindex.getSubCurrent() // 2001
 
-// Get subordinate next z-index
+// Get subordinate next z-index.
 domZindex.getSubNext() // 2002
 ```
 

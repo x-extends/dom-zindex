@@ -8,9 +8,30 @@ const storeData = {
   s: 1000
 }
 
+function isDocument () {
+  return typeof document !== 'undefined'
+}
+
+function getDomMaxZIndex () {
+  let max = 0
+  if (isDocument()) {
+    const allElem = document.body.getElementsByTagName('*')
+    for(let i = 0; i < allElem.length; i++) {
+      const elem = allElem[i] as HTMLElement
+      if (elem && elem.style && elem.nodeType === 1) {
+        const zIndex = elem.style.zIndex
+        if (zIndex && /^\d+$/.test(zIndex)) {
+          max = Math.max(max, Number(zIndex))
+        }
+      }
+    }
+  }
+  return max
+}
+
 function getDom () {
   if (!storeEl) {
-    if (typeof document !== 'undefined') {
+    if (isDocument()) {
       storeEl = document.getElementById(storeId)
       if (!storeEl) {
         storeEl = document.createElement('div')
@@ -96,7 +117,8 @@ const DomZIndex = {
   getNext,
   setSubCurrent,
   getSubCurrent,
-  getSubNext
+  getSubNext,
+  getMax: getDomMaxZIndex
 }
 
 export default DomZIndex
