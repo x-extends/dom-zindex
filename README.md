@@ -68,6 +68,12 @@ let currZindex2 = 2000
 currZindex2 = domZindex.getCurrent(currZindex2) // 1500
 ```
 
+## Contributors
+
+Thank you to everyone who contributed to this project.
+
+[![dom-zindex](https://contrib.rocks/image?repo=x-extends/dom-zindex)](https://github.com/x-extends/dom-zindex/graphs/contributors)
+
 ## License
 
 [MIT](LICENSE) © 2019-present, Xu Liangzhan
