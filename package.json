@@ -1,6 +1,6 @@
 {
   "name": "dom-zindex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Web common z-index style management",
   "files": [
     "dist",

@@ -33,39 +33,39 @@ npm install dom-zindex
 ## 示例 1
 
 ```javascript
-import domZindex from 'dom-zindex'
+import domZIndex from 'dom-zindex'
 
 // 获取页面中最大的 z-index
-domZindex.getMax()
+domZIndex.getMax()
 
 // 设置当前 z-index
-domZindex.setCurrent(1000)
+domZIndex.setCurrent(1000)
 
 // 获取当前 z-index
-domZindex.getCurrent() // 1000
+domZIndex.getCurrent() // 1000
 
 // 获取下一级 z-index
-domZindex.getNext() // 1001
+domZIndex.getNext() // 1001
 
 // 获取次要的当前 z-index，次要的 z-index 始终会大于主要的 z-index
-domZindex.getSubCurrent() // 2001
+domZIndex.getSubCurrent() // 2001
 
 // 获取次要的下一级 z-index
-domZindex.getSubNext() // 2002
+domZIndex.getSubNext() // 2002
 ```
 
 ## 示例 2
 
 ```javascript
-import domZindex from 'dom-zindex'
+import domZIndex from 'dom-zindex'
 
 // 如果传入 z-index 小于全局，则自动获取下一个
-let currZindex1 = 999
-currZindex1 = domZindex.getCurrent(currZindex1) // 1000
+let currZIndex1 = 999
+currZIndex1 = domZIndex.getCurrent(currZIndex1) // 1000
 
 // 如果传入 z-index 大于全局，则返回传入值
-let currZindex2 = 1500
-currZindex2 = domZindex.getCurrent(currZindex2) // 1500
+let currZIndex2 = 1500
+currZIndex2 = domZIndex.getCurrent(currZIndex2) // 1500
 ```
 
 ## License

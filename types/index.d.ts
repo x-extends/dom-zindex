@@ -1,3 +1,6 @@
+// Gets the largest z-index on the page.
+export function getMax(): number
+
 /**
  * Set main z-index value
  * @param value
