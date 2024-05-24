@@ -34,6 +34,7 @@ export function getSubCurrent(): number
 export function getSubNext(): number
 
 declare const DomZIndex: {
+  getMax: typeof getMax
   setCurrent: typeof setCurrent
   getCurrent: typeof getCurrent
   getNext: typeof getNext
