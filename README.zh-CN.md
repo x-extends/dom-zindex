@@ -68,6 +68,21 @@ let currZIndex2 = 1500
 currZIndex2 = domZIndex.getCurrent(currZIndex2) // 1500
 ```
 
+## 使用 CSS 变量
+
+* 内置以下变量
+  * ```--dom-main-z-index``` 等于 ```getCurrent```()
+  * ```--dom-sub-z-index``` 等于 ```getSubCurrent```()
+
+```css
+.my-popup {
+  z-index: var(--dom-main-z-index);
+}
+.my-msg {
+  z-index: var(--dom-sub-z-index);
+}
+```
+
 ## License
 
 [MIT](LICENSE) © 2019-present, Xu Liangzhan

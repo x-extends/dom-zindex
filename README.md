@@ -70,10 +70,9 @@ currZIndex2 = domZIndex.getCurrent(currZIndex2) // 1500
 
 ## Css var
 
-Using css variables.  
-
-* ```--dom-main-z-index``` be equivalent to ```getCurrent()```
-* ```--dom-sub-z-index``` be equivalent to ```getSubCurrent()```
+* Built-in following variables
+  * ```--dom-main-z-index``` 等于 ```getCurrent```()
+  * ```--dom-sub-z-index``` 等于 ```getSubCurrent```()
 
 ```css
 .my-popup {
