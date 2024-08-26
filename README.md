@@ -68,6 +68,22 @@ let currZIndex2 = 2000
 currZIndex2 = domZIndex.getCurrent(currZIndex2) // 1500
 ```
 
+## Css var
+
+Using css variables.  
+
+* ```--dom-main-z-index``` be equivalent to ```getCurrent()```
+* ```--dom-sub-z-index``` be equivalent to ```getSubCurrent()```
+
+```css
+.my-popup {
+  z-index: var(--dom-main-z-index);
+}
+.my-msg {
+  z-index: var(--dom-sub-z-index);
+}
+```
+
 ## Contributors
 
 Thank you to everyone who contributed to this project.

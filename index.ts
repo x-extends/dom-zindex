@@ -1,5 +1,9 @@
 let storeEl: HTMLElement | null = null
 let storeId = 'z-index-manage'
+
+let styleEl: HTMLStyleElement | null = null
+let styleId = 'z-index-style'
+
 let storeMainKey: 'm' = 'm'
 let storeSubKey: 's' = 's'
 
@@ -27,6 +31,29 @@ function getDomMaxZIndex () {
     }
   }
   return max
+}
+
+function getStyle () {
+  if (!styleEl) {
+    if (isDocument()) {
+      styleEl = document.getElementById(styleId) as HTMLStyleElement
+      if (!styleEl) {
+        styleEl = document.createElement('style')
+        styleEl.id = styleId
+        document.getElementsByTagName('head')[0].appendChild(styleEl)
+      }
+    }
+  }
+  return styleEl
+}
+
+function updateVar () {
+  let styEl = getStyle()
+  if (styEl) {
+    let prefixes = '--dom-'
+    let propKey = '-z-index'
+    styEl.innerHTML = ':root{' + prefixes + 'main' + propKey + ':' + getCurrent() + ';' + prefixes + 'sub' + propKey + ':' + getSubCurrent() + '}'
+  }
 }
 
 function getDom () {
@@ -60,6 +87,7 @@ function createSetHandle (key: keyof (typeof storeData)) {
         }
       }
     }
+    updateVar()
     return storeData[key]
   }
 }
@@ -120,5 +148,7 @@ const DomZIndex = {
   getSubNext,
   getMax: getDomMaxZIndex
 }
+
+updateVar()
 
 export default DomZIndex
