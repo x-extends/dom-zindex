@@ -1,3 +1,6 @@
+let winDom: Document | null = null
+let bodyEl: HTMLElement | null = null
+
 let storeEl: HTMLElement | null = null
 let storeId = 'z-index-manage'
 
@@ -12,20 +15,36 @@ const storeData = {
   s: 1000
 }
 
-function isDocument () {
-  return typeof document !== 'undefined'
+function getDocument () {
+  if (!winDom) {
+    if (typeof document !== 'undefined') {
+      winDom = document
+    } 
+  }
+  return winDom
+}
+
+function getBody () {
+  if (winDom && !bodyEl) {
+    bodyEl= winDom.body || winDom.getElementsByTagName('body')[0]
+  }
+  return bodyEl
 }
 
 function getDomMaxZIndex () {
   let max = 0
-  if (isDocument()) {
-    const allElem = document.body.getElementsByTagName('*')
-    for(let i = 0; i < allElem.length; i++) {
-      const elem = allElem[i] as HTMLElement
-      if (elem && elem.style && elem.nodeType === 1) {
-        const zIndex = elem.style.zIndex
-        if (zIndex && /^\d+$/.test(zIndex)) {
-          max = Math.max(max, Number(zIndex))
+  const dom = getDocument()
+  if (dom) {
+    const body = getBody()
+    if (body) {
+      const allElem = body.getElementsByTagName('*')
+      for(let i = 0; i < allElem.length; i++) {
+        const elem = allElem[i] as HTMLElement
+        if (elem && elem.style && elem.nodeType === 1) {
+          const zIndex = elem.style.zIndex
+          if (zIndex && /^\d+$/.test(zIndex)) {
+            max = Math.max(max, Number(zIndex))
+          }
         }
       }
     }
@@ -35,12 +54,13 @@ function getDomMaxZIndex () {
 
 function getStyle () {
   if (!styleEl) {
-    if (isDocument()) {
-      styleEl = document.getElementById(styleId) as HTMLStyleElement
+    const dom = getDocument()
+    if (dom) {
+      styleEl = dom.getElementById(styleId) as HTMLStyleElement
       if (!styleEl) {
-        styleEl = document.createElement('style')
+        styleEl = dom.createElement('style')
         styleEl.id = styleId
-        document.getElementsByTagName('head')[0].appendChild(styleEl)
+        dom.getElementsByTagName('head')[0].appendChild(styleEl)
       }
     }
   }
@@ -56,17 +76,21 @@ function updateVar () {
   }
 }
 
-function getDom () {
+function getStoreDom () {
   if (!storeEl) {
-    if (isDocument()) {
-      storeEl = document.getElementById(storeId)
+    const dom = getDocument()
+    if (dom) {
+      storeEl = dom.getElementById(storeId)
       if (!storeEl) {
-        storeEl = document.createElement('div')
-        storeEl.id = storeId
-        storeEl.style.display = 'none'
-        document.body.appendChild(storeEl)
-        setCurrent(storeData.m)
-        setSubCurrent(storeData.s)
+        const body = getBody()
+        if (body) {
+          storeEl = dom.createElement('div')
+          storeEl.id = storeId
+          storeEl.style.display = 'none'
+          body.appendChild(storeEl)
+          setCurrent(storeData.m)
+          setSubCurrent(storeData.s)
+        }
       }
     }
   }
@@ -78,12 +102,12 @@ function createSetHandle (key: keyof (typeof storeData)) {
     if (value) {
       value = Number(value)
       storeData[key] = value
-      let doc = getDom()
-      if (doc) {
-        if (doc.dataset) {
-          doc.dataset[key] = value + ''
+      let el = getStoreDom()
+      if (el) {
+        if (el.dataset) {
+          el.dataset[key] = value + ''
         } else {
-          doc.setAttribute('data-' + key, value + '')
+          el.setAttribute('data-' + key, value + '')
         }
       }
     }
@@ -97,9 +121,9 @@ export const setCurrent = createSetHandle(storeMainKey)
 function createGetHandle (key: keyof (typeof storeData), nextMethod: () => number) {
   return function getCurrent (currZindex?: number) {
     let zIndex
-    let doc = getDom()
-    if (doc) {
-      const domVal = doc.dataset ? doc.dataset[key] : doc.getAttribute('data-' + key)
+    let el = getStoreDom()
+    if (el) {
+      const domVal = el.dataset ? el.dataset[key] : el.getAttribute('data-' + key)
       if (domVal) {
         zIndex = Number(domVal)
       }
