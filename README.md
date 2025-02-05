@@ -20,13 +20,13 @@ Web common z-index style management.
 
 ## Installing
 
-package gzip <= 900B
-
 ```shell
 npm install dom-zindex
 ```
 
 ## CDN
+
+package gzip <= 900B
 
 ```HTML
 <script src="https://unpkg.com/dom-zindex"></script>
