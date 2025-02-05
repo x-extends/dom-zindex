@@ -8,6 +8,7 @@
 [![issues closed](https://img.shields.io/github/issues-closed/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues?q=is%3Aissue+is%3Aclosed)
 [![pull requests](https://img.shields.io/github/issues-pr/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/pulls)
 [![pull requests closed](https://img.shields.io/github/issues-pr-closed/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/pulls?q=is%3Apr+is%3Aclosed)
+[![gzip size: JS](http://img.badgesize.io/https://unpkg.com/dom-zindex/dist/dom-zindex.umd.min.js?compression=gzip&label=gzip%20size:%20JS)](https://unpkg.com/dom-zindex/dist/dom-zindex.umd.min.js)
 [![npm license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 Web 通用的 z-index style 管理器  
