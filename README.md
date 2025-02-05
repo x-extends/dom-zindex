@@ -20,6 +20,8 @@ Web common z-index style management.
 
 ## Installing
 
+package gzip <= 900B
+
 ```shell
 npm install dom-zindex
 ```

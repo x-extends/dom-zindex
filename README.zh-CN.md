@@ -20,6 +20,8 @@ Web 通用的 z-index style 管理器
 
 ## 安装
 
+包的大小 gzip <= 900B
+
 ```shell
 npm install dom-zindex
 ```
