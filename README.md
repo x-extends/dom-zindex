@@ -5,9 +5,9 @@ English | [简体中文](README.zh-CN.md)
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
 [![npm downloads](https://img.shields.io/npm/dt/dom-zindex.svg?style=flat-square)](https://npm-stat.com/charts.html?package=dom-zindex)
 [![issues](https://img.shields.io/github/issues/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues)
-[![issues closed](https://img.shields.io/github/issues-closed/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues?q=is%3Aissue+is%3Aclosed)
 [![pull requests](https://img.shields.io/github/issues-pr/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/pulls)
 [![gzip size: JS](http://img.badgesize.io/https://unpkg.com/dom-zindex/dist/index.umd.min.js?compression=gzip&label=gzip%20size:%20JS)](https://unpkg.com/dom-zindex/dist/index.umd.min.js)
+[![npm downloads](https://img.shields.io/npm/dm/dom-zindex.svg?style=flat-square)](http://npm-stat.com/charts.html?package=dom-zindex)
 [![npm license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 Web common z-index style management.
