@@ -4,10 +4,10 @@ English | [简体中文](README.zh-CN.md)
 
 [![gitee star](https://gitee.com/x-extends/dom-zindex/badge/star.svg?theme=dark)](https://gitee.com/x-extends/dom-zindex/stargazers)
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
-[![issues](https://img.shields.io/github/issues/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues)
-[![pull requests](https://img.shields.io/github/issues-pr/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/pulls)
 [![gzip size: JS](http://img.badgesize.io/https://unpkg.com/dom-zindex/dist/index.umd.min.js?compression=gzip&label=gzip%20size:%20JS)](https://unpkg.com/dom-zindex/dist/index.umd.min.js)
 [![npm downloads](https://img.shields.io/npm/dm/dom-zindex.svg?style=flat-square)](http://npm-stat.com/charts.html?package=dom-zindex)
+[![issues](https://img.shields.io/github/issues/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues)
+[![pull requests](https://img.shields.io/github/issues-pr/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/pulls)
 [![npm license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 Web common z-index style management.
