@@ -3,6 +3,7 @@
 English | [简体中文](README.zh-CN.md)  
 
 [![gitee star](https://gitee.com/x-extends/dom-zindex/badge/star.svg?theme=dark)](https://gitee.com/x-extends/dom-zindex/stargazers)
+![gitcode star](https://gitcode.com/x-extends/dom-zindex/star/badge.svg)
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
 [![gzip size: JS](http://img.badgesize.io/https://unpkg.com/dom-zindex/dist/index.umd.min.js?compression=gzip&label=gzip%20size:%20JS)](https://unpkg.com/dom-zindex/dist/index.umd.min.js)
 [![npm downloads](https://img.shields.io/npm/dm/dom-zindex.svg?style=flat-square)](http://npm-stat.com/charts.html?package=dom-zindex)
