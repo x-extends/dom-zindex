@@ -3,6 +3,7 @@
 [English](README.md) | 简体中文  
 
 [![gitee star](https://gitee.com/x-extends/dom-zindex/badge/star.svg?theme=dark)](https://gitee.com/x-extends/dom-zindex/stargazers)
+[![gitcode star](https://gitcode.com/x-extends/dom-zindex/star/badge.svg)](https://gitcode.com/x-extends/dom-zindex/stargazers)
 [![npm version](https://img.shields.io/npm/v/dom-zindex.svg?style=flat-square)](https://www.npmjs.com/package/dom-zindex)
 [![issues](https://img.shields.io/github/issues/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/issues)
 [![pull requests](https://img.shields.io/github/issues-pr/x-extends/dom-zindex.svg)](https://github.com/x-extends/dom-zindex/pulls)
