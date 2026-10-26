@@ -7,12 +7,17 @@ const ts = require('gulp-typescript')
 const pack = require('./package.json')
 const tsconfig = require('./tsconfig.json')
 
+const tsSettings = {
+  ...tsconfig.compilerOptions,
+  target: 'es2016'
+}
+
 const esmOutDir = 'es'
 const commOutDir = 'lib'
 const distOutDir = 'dist'
 
-gulp.task('build_common', function () {
-  return gulp.src(['index.ts'])
+gulp.task('build_common', function() {
+  return gulp.src(['src/index.ts'])
     .pipe(ts(tsconfig.compilerOptions))
     .pipe(babel({
       presets: ['@babel/env']
@@ -24,16 +29,9 @@ gulp.task('build_common', function () {
     .pipe(gulp.dest(distOutDir))
 })
 
-gulp.task('build_esm', function () {
-  return gulp.src(['index.ts'])
-    .pipe(ts({
-      strict: true,
-      moduleResolution: 'node',
-      noImplicitAny: true,
-      target: 'es5',
-      module: 'esnext',
-      lib: ['dom', 'esnext']
-    }))
+gulp.task('build_esm', function() {
+  return gulp.src(['src/index.ts'])
+    .pipe(ts(tsSettings))
     .pipe(rename({
       basename: 'index',
       extname: '.esm.js'
@@ -53,8 +51,8 @@ gulp.task('build_esm', function () {
     .pipe(gulp.dest(distOutDir))
 })
 
-gulp.task('build_umd', function () {
-  return gulp.src(['index.ts'])
+gulp.task('build_umd', function() {
+  return gulp.src(['src/index.ts'])
     .pipe(ts(tsconfig.compilerOptions))
     .pipe(babel({
       moduleId: pack.name,
@@ -83,6 +81,6 @@ gulp.task('clear', () => {
   ])
 })
 
-gulp.task('build_all', gulp.parallel('build_common','build_esm', 'build_umd'))
+gulp.task('build_all', gulp.parallel('build_common', 'build_esm', 'build_umd'))
 
 gulp.task('build', gulp.series('clear', 'build_all'))

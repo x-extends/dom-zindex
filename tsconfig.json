@@ -1,13 +1,14 @@
 {
   "files": [
-    "index.ts"
+    "src/index.ts"
   ],
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
     "strict": true,
     "moduleResolution": "bundler",
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "target": "esnext",
     "lib": [
       "esnext",
       "dom",
