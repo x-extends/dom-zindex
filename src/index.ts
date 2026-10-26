@@ -97,8 +97,8 @@ function getStoreDom() {
   return storeEl
 }
 
-function createSetHandle(key: keyof (typeof storeData)) {
-  return function(value: number) {
+function createSetHandle(key: keyof typeof storeData) {
+  return function (value: number) {
     if (value) {
       value = Number(value)
       storeData[key] = value
@@ -118,7 +118,7 @@ function createSetHandle(key: keyof (typeof storeData)) {
 
 export const setCurrent = createSetHandle(storeMainKey)
 
-function createGetHandle(key: keyof (typeof storeData), nextMethod: () => number) {
+function createGetHandle(key: keyof typeof storeData, nextMethod: () => number) {
   return function getCurrent(currZindex?: number) {
     let zIndex
     const el = getStoreDom()

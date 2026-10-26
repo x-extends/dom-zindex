@@ -9,10 +9,10 @@
   ],
   "scripts": {
     "update": "npm install --legacy-peer-deps",
-    "lint:es": "eslint src/**",
-    "lint:ox": "oxfmt --check src/**",
-    "esfix": "eslint --fix src/**",
-    "oxfix": "oxfmt src/** --write",
+    "lint:es": "eslint src/** types/**",
+    "lint:ox": "oxfmt --check src/** types/**",
+    "esfix": "eslint --fix src/** types/**",
+    "oxfix": "oxfmt src/** types/** --write",
     "lib": "gulp build"
   },
   "main": "dist/index.common.js",
@@ -44,9 +44,13 @@
     "gulp-replace": "^1.1.3",
     "gulp-typescript": "^5.0.1",
     "gulp-uglify": "^3.0.2",
+    "oxfmt": "~0.51.0",
     "vue-eslint-parser": "^10.4.1",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.67.0"
+  },
+  "allowScripts": {
+    "es5-ext@0.10.64": true
   },
   "repository": {
     "type": "git",
