@@ -9,6 +9,11 @@
   ],
   "scripts": {
     "update": "npm install --legacy-peer-deps",
+    "lint": "vue-cli-service lint",
+    "lint:es": "eslint packages/**",
+    "lint:ox": "oxfmt --check packages/**",
+    "esfix": "eslint --fix packages/**",
+    "oxfix": "oxfmt packages/** --write",
     "lib": "gulp build"
   },
   "main": "dist/index.common.js",
