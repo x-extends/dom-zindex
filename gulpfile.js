@@ -26,6 +26,7 @@ gulp.task('build_common', function() {
       basename: 'index',
       extname: '.common.js'
     }))
+    .pipe(gulp.dest(commOutDir))
     .pipe(gulp.dest(distOutDir))
 })
 
@@ -64,6 +65,7 @@ gulp.task('build_umd', function() {
       suffix: '.umd',
       extname: '.js'
     }))
+    .pipe(gulp.dest(commOutDir))
     .pipe(gulp.dest(distOutDir))
     .pipe(uglify())
     .pipe(rename({
@@ -71,6 +73,7 @@ gulp.task('build_umd', function() {
       suffix: '.umd.min',
       extname: '.js'
     }))
+    .pipe(gulp.dest(commOutDir))
     .pipe(gulp.dest(distOutDir))
 })
 

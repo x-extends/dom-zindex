@@ -5,6 +5,7 @@
   "files": [
     "dist",
     "es",
+    "lib",
     "types"
   ],
   "scripts": {
@@ -13,12 +14,13 @@
     "lint:ox": "oxfmt --check src/** types/**",
     "esfix": "eslint --fix src/** types/**",
     "oxfix": "oxfmt src/** types/** --write",
-    "lib": "gulp build"
+    "lib": "gulp build",
+    "clean:all": "node scripts/clean-all"
   },
-  "main": "dist/index.common.js",
+  "main": "lib/index.common.js",
   "module": "es/index.esm.js",
-  "unpkg": "dist/index.umd.js",
-  "jsdelivr": "dist/index.umd.js",
+  "unpkg": "lib/index.umd.js",
+  "jsdelivr": "lib/index.umd.js",
   "typings": "types/index.d.ts",
   "devDependencies": {
     "@eslint/css": "^1.4.0",
